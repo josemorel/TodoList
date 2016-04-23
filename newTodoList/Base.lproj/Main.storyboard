@@ -49,7 +49,7 @@
                     <navigationItem key="navigationItem" title="Todo" id="eu2-xX-6rc" userLabel="Todo">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5NK-mn-4G4">
                             <connections>
-                                <segue destination="3oR-RC-Zys" kind="presentation" id="vLA-0o-Up7"/>
+                                <segue destination="3oR-RC-Zys" kind="presentation" identifier="PresentAddTodoSegue" id="vLA-0o-Up7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -74,10 +74,10 @@
             </objects>
             <point key="canvasLocation" x="1747" y="842"/>
         </scene>
-        <!--Add Todo Controller-->
+        <!--Add New Todo Controller-->
         <scene sceneID="KE5-HB-1JE">
             <objects>
-                <viewController id="VRU-6h-0mb" customClass="addTodoController" customModule="newTodoList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VRU-6h-0mb" customClass="addNewTodoController" customModule="newTodoList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jhr-Z7-ArM"/>
                         <viewControllerLayoutGuide type="bottom" id="S0B-oS-AAa"/>
@@ -98,35 +98,53 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Avw-NM-4a4">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cjB-kG-pUC">
+                                <rect key="frame" x="149" y="153" width="375" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="vZk-um-Zdh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Avw-NM-4a4">
                                 <rect key="frame" x="144" y="94" width="385" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cjB-kG-pUC">
-                                <rect key="frame" x="149" y="153" width="375" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="cjB-kG-pUC" secondAttribute="trailing" constant="56" id="8Zd-au-tbf"/>
+                            <constraint firstItem="Avw-NM-4a4" firstAttribute="centerX" secondItem="cjB-kG-pUC" secondAttribute="centerX" id="ESR-Pc-MYV"/>
                             <constraint firstItem="IQQ-jb-h9J" firstAttribute="top" secondItem="6ai-ch-Cun" secondAttribute="bottom" constant="47" id="ET8-tT-UKF"/>
+                            <constraint firstItem="cjB-kG-pUC" firstAttribute="top" secondItem="Avw-NM-4a4" secondAttribute="bottom" constant="29" id="JBH-Yo-qCv"/>
+                            <constraint firstItem="Avw-NM-4a4" firstAttribute="leading" secondItem="6ai-ch-Cun" secondAttribute="trailing" constant="71" id="MhA-c1-aNZ"/>
                             <constraint firstItem="6ai-ch-Cun" firstAttribute="leading" secondItem="IQQ-jb-h9J" secondAttribute="leading" id="RwC-ok-7JQ"/>
                             <constraint firstItem="6ai-ch-Cun" firstAttribute="top" secondItem="Jhr-Z7-ArM" secondAttribute="bottom" constant="30" id="gD7-5A-6yn"/>
                             <constraint firstItem="6ai-ch-Cun" firstAttribute="leading" secondItem="n3U-u0-lML" secondAttribute="leadingMargin" constant="5" id="jTG-t1-dNa"/>
+                            <constraint firstItem="cjB-kG-pUC" firstAttribute="leading" secondItem="IQQ-jb-h9J" secondAttribute="trailing" constant="28" id="ml9-uI-BmC"/>
+                            <constraint firstItem="Avw-NM-4a4" firstAttribute="top" secondItem="6ai-ch-Cun" secondAttribute="top" id="peM-ze-u7r"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="MX0-IQ-P8r">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Slk-mT-AeH"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="fmd-Le-nh3"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Slk-mT-AeH">
+                            <connections>
+                                <action selector="cancelAction:" destination="VRU-6h-0mb" id="0EH-3B-DVK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="fmd-Le-nh3">
+                            <connections>
+                                <action selector="saveAction:" destination="VRU-6h-0mb" id="yAG-sN-nnR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="descriptionTxt" destination="cjB-kG-pUC" id="1B6-H4-C8o"/>
+                        <outlet property="titleTxt" destination="Avw-NM-4a4" id="hJK-xK-9z1"/>
+                        <outlet property="tituloTxt" destination="Avw-NM-4a4" id="kbl-Fv-REU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L02-53-45N" userLabel="First Responder" sceneMemberID="firstResponder"/>

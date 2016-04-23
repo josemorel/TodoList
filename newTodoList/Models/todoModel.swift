@@ -2,17 +2,16 @@
 //  todoModel.swift
 //  newTodoList
 //
-//  Created by CFPAPP on 22/4/16.
+//  Created by CFPAPP on 23/4/16.
 //  Copyright © 2016 CFPAPP. All rights reserved.
 //
 
 import UIKit
 
-class todoModel: NSObject {
-    var title :String!
-    var Descripcion : String!
-    var prioridad : Int!
+class todoModel : NSObject{
+    var titulo : String!
+    var descrip: String!
     var categoria : Int!
-    var estado : Int!
-    
+    var estatus : Int!
+    var prioridad : Int!
 }

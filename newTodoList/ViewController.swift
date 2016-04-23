@@ -8,8 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
 
+
+class ViewController: UIViewController,UITableViewDelegate,TodoNavigationDelegate{
+
+    var todo = [todoModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,6 +26,22 @@ class ViewController: UIViewController {
         print("aaaa2")
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        /*
+         if segue.identifier == "PresentAddNoteSegue" {
+         if let vc = segue.destinationViewController as? AddNoteNavigationViewController {
+         vc.addDelegate = self
+         }
+         }
+         
+         */
+        
+        if segue.identifier == "PresentAddTodoSegue" {
+            if let vc = segue.destinationViewController as? addTodoController{
+                vc.delegate = self
+            }
+        }
+    }
 
 }
 
