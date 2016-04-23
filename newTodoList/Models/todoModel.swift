@@ -6,8 +6,13 @@
 //  Copyright © 2016 CFPAPP. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class todoModel: NSObject {
-
+    var title :String!
+    var Descripcion : String!
+    var prioridad : Int!
+    var categoria : Int!
+    var estado : Int!
+    
 }
