@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class ViewController: UIViewController,UITableViewDelegate,TodoNavigationDelegate{
+class ViewController: UIViewController,UITableViewDelegate{
 
     var todo = [todoModel]()
     override func viewDidLoad() {
@@ -27,21 +27,27 @@ class ViewController: UIViewController,UITableViewDelegate,TodoNavigationDelegat
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        /*
-         if segue.identifier == "PresentAddNoteSegue" {
-         if let vc = segue.destinationViewController as? AddNoteNavigationViewController {
-         vc.addDelegate = self
-         }
-         }
-         
-         */
         
         if segue.identifier == "PresentAddTodoSegue" {
-            if let vc = segue.destinationViewController as? addTodoController{
-                vc.delegate = self
+            if let vc = segue.destinationViewController as? TodoNavigationController{
+                //vc.addDelegate = self
             }
         }
     }
+    
+    
+    
+    /*
+     func didCreateNote(note: Note) {
+     notes.insert(note, atIndex: 0)
+     self.tableView.insertRowsAtIndexPaths([ NSIndexPath(forRow: 0, inSection: 0) ], withRowAnimation: UITableViewRowAnimation.Top)
+     }
+     
+     
+     */
 
+    func didCreateTodo(todo : todoModel){
+        
+    }
 }
 

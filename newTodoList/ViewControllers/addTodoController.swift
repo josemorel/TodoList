@@ -14,7 +14,8 @@ class addTodoController: UIViewController,UITableViewDelegate {
     var todo : todoModel = todoModel()
     
     @IBOutlet weak var descriptionTxt: UITextView!
-  
+    
+   
     @IBOutlet weak var titleTxt: UITextField!
     
     override func viewDidLoad() {
@@ -44,18 +45,18 @@ class addTodoController: UIViewController,UITableViewDelegate {
         todo.titulo = titleTxt.text
         todo.descrip = descriptionTxt.text
         todo.estatus = 0
- 
+        
         dismissViewControllerAnimated(true){
             if let delegate = self.delegate{
                 delegate.didCreateNote(self.todo)
                 
             }
         }
-        
     }
-    @IBAction func doneAction(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true){
-            
-        }
+ 
+    @IBAction func cancelAction(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
+   
+    
 }

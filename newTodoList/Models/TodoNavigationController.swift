@@ -18,7 +18,7 @@ class TodoNavigationController: UINavigationController {
         
         // Do any additional setup after loading the view.
         
-        if let vc = self.topViewController as? addNewTodoController{
+        if let vc = self.topViewController as? addTodoController{
             vc.delegate = addDelegate
         }
     }
